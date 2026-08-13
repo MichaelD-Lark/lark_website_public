@@ -1,0 +1,86 @@
+/* Lark Vineyard — landing page
+   Colours and type per BRAND MANUAL (brand_manual/BRAND MANUAL.pdf) */
+
+:root {
+  /* Primary colours */
+  --earthbound-wool: #fffbf4;
+  --twilight-pinot-noir: #36364c;
+
+  /* Accent colours (unused on the landing page, kept for consistency) */
+  --solaris-glow: #c9a971;
+  --crushed-velvet: #64172d;
+  --cutting-green: #445c57;
+
+  /* Ranade for body/supporting text; Gastela Serif is print-licensed only,
+     so a serif stack stands in wherever titles need it. */
+  --font-body: "Ranade", "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--earthbound-wool);
+  color: var(--twilight-pinot-noir);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.landing {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+/* Primary logo, centred on screen. Scales with the viewport but never drops
+   below the 45px digital minimum from the manual's sizing rules. */
+.landing__logo {
+  width: clamp(45px, min(42vw, 42vh), 460px);
+  height: auto;
+}
+
+/* "Coming soon..." sits at the bottom of the screen.
+   Ranade body text: 14–18px, tracking 30 (~0.03em), leading 1.5+. */
+.landing__message {
+  position: absolute;
+  bottom: clamp(1.5rem, 4vw, 3rem);
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: clamp(0.875rem, 1.6vw, 1.125rem);
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .landing__logo,
+  .landing__message {
+    animation: fade-in 1.2s ease-out both;
+  }
+
+  .landing__message {
+    animation-delay: 0.3s;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
