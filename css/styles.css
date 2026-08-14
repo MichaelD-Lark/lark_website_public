@@ -14,6 +14,9 @@
   /* Ranade for body/supporting text; Gastela Serif is print-licensed only,
      so a serif stack stands in wherever titles need it. */
   --font-body: "Ranade", "Helvetica Neue", Arial, sans-serif;
+
+  /* Shared page gutter, so the copyright line aligns with page content. */
+  --page-padding: clamp(1.5rem, 4vw, 3rem);
 }
 
 *,
@@ -29,6 +32,9 @@ body {
 
 body {
   margin: 0;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
   background-color: var(--earthbound-wool);
   color: var(--twilight-pinot-noir);
   font-family: var(--font-body);
@@ -37,11 +43,11 @@ body {
 
 .landing {
   position: relative;
-  min-height: 100svh;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(1.5rem, 4vw, 3rem);
+  padding: var(--page-padding);
 }
 
 /* Primary logo, centred on screen. Scales with the viewport but never drops
@@ -55,7 +61,7 @@ body {
    Ranade body text: 14–18px, tracking 30 (~0.03em), leading 1.5+. */
 .landing__message {
   position: absolute;
-  bottom: clamp(1.5rem, 4vw, 3rem);
+  bottom: var(--page-padding);
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
@@ -65,13 +71,29 @@ body {
   white-space: nowrap;
 }
 
+/* Copyright is the very bottom line of the page, aligned left and set
+   slightly smaller than the other text. */
+.footer {
+  padding: 0 var(--page-padding) var(--page-padding);
+}
+
+.footer__copyright {
+  margin: 0;
+  text-align: left;
+  font-size: clamp(0.75rem, 1.3vw, 0.9375rem);
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .landing__logo,
-  .landing__message {
+  .landing__message,
+  .footer__copyright {
     animation: fade-in 1.2s ease-out both;
   }
 
-  .landing__message {
+  .landing__message,
+  .footer__copyright {
     animation-delay: 0.3s;
   }
 }
