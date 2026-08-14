@@ -17,6 +17,10 @@
 
   /* Shared page gutter, so the copyright line aligns with page content. */
   --page-padding: clamp(1.5rem, 4vw, 3rem);
+
+  /* Bottom line: the social icon is set slightly larger than the copyright. */
+  --copyright-size: clamp(0.75rem, 1.3vw, 0.9375rem);
+  --social-icon-size: calc(var(--copyright-size) * 1.35);
 }
 
 *,
@@ -71,29 +75,60 @@ body {
   white-space: nowrap;
 }
 
-/* Copyright is the very bottom line of the page, aligned left and set
-   slightly smaller than the other text. */
+/* Bottom line of the page: copyright on the left, social link on the right. */
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   padding: 0 var(--page-padding) var(--page-padding);
 }
 
 .footer__copyright {
   margin: 0;
   text-align: left;
-  font-size: clamp(0.75rem, 1.3vw, 0.9375rem);
+  font-size: var(--copyright-size);
   letter-spacing: 0.03em;
   line-height: 1.6;
+}
+
+/* Padding widens the tap target; the matching negative margin keeps the icon
+   optically flush with the page gutter. */
+.footer__social {
+  display: inline-flex;
+  padding: 0.5rem;
+  margin: -0.5rem;
+  border-radius: 4px;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.footer__social:hover {
+  opacity: 0.65;
+}
+
+.footer__social:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+
+.footer__social-icon {
+  display: block;
+  width: var(--social-icon-size);
+  height: auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .landing__logo,
   .landing__message,
-  .footer__copyright {
+  .footer__copyright,
+  .footer__social {
     animation: fade-in 1.2s ease-out both;
   }
 
   .landing__message,
-  .footer__copyright {
+  .footer__copyright,
+  .footer__social {
     animation-delay: 0.3s;
   }
 }
