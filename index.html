@@ -9,17 +9,26 @@
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=ranade@400,500&amp;display=swap">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/site.js"></script>
 </head>
 <body>
   <main class="landing">
-    <img
-      class="landing__logo"
-      src="logos/Primary%20Logo_Twilight%20Pinot%20Noir.png"
-      alt="Lark Vineyard"
-      width="4167"
-      height="4303">
+    <button
+      class="landing__gate-trigger"
+      type="button"
+      data-code-trigger
+      aria-haspopup="dialog"
+      aria-label="Lark Vineyard — enter the website">
+      <img
+        class="landing__logo"
+        src="logos/Primary%20Logo_Twilight%20Pinot%20Noir.png"
+        alt=""
+        width="4167"
+        height="4303">
+    </button>
     <p class="landing__message">Coming soon...</p>
   </main>
+
   <footer class="footer">
     <p class="footer__copyright">&copy; 2026, E.W.Davies Farms Ltd.</p>
     <a
@@ -31,5 +40,31 @@
       <img class="footer__social-icon" src="logos/instagram.png" alt="" width="600" height="600">
     </a>
   </footer>
+
+  <dialog class="gate" data-code-dialog aria-labelledby="gate-title">
+    <form class="gate__form" data-code-form novalidate>
+      <h2 class="gate__title" id="gate-title">Secret code</h2>
+      <p class="gate__hint">Enter the code to uncork the rest of the website.</p>
+
+      <label class="gate__label" for="gate-code">Code</label>
+      <input
+        class="gate__input"
+        id="gate-code"
+        name="code"
+        type="text"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        required>
+
+      <p class="gate__error" data-code-error role="alert"></p>
+
+      <div class="gate__actions">
+        <button class="gate__button gate__button--quiet" type="button" data-code-cancel>Cancel</button>
+        <button class="gate__button" type="submit">Enter</button>
+      </div>
+    </form>
+  </dialog>
 </body>
 </html>
