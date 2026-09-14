@@ -1,5 +1,14 @@
-/* Lark Vineyard — landing page
+/* Lark Vineyard
    Colours and type per BRAND MANUAL (brand_manual/BRAND MANUAL.pdf) */
+
+/* Gastela Serif — the manual's titles/headers face, used sparingly. */
+@font-face {
+  font-family: "Gastela Serif";
+  src: url("../fonts/Gastela-Serif.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   /* Primary colours */
@@ -11,8 +20,8 @@
   --crushed-velvet: #64172d;
   --cutting-green: #445c57;
 
-  /* Ranade for body/supporting text; Gastela Serif is print-licensed only,
-     so a serif stack stands in wherever titles need it. */
+  /* Ranade for body/supporting text, Gastela Serif for titles (now bundled
+     in fonts/, with a serif stack behind it). */
   --font-body: "Ranade", "Helvetica Neue", Arial, sans-serif;
   --font-display: "Gastela Serif", Georgia, "Times New Roman", serif;
 
@@ -253,7 +262,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
   padding: 0.75rem var(--page-padding);
   background-color: var(--earthbound-wool);
   border-bottom: 1px solid var(--rule);
@@ -270,50 +280,148 @@ body {
   outline-offset: 4px;
 }
 
-/* Held at or above the manual's 45px digital minimum for the primary logo. */
+/* Horizontal (secondary) logo — the manual's choice for website headers.
+   Held above its 100px digital minimum at every viewport. */
 .navbar__logo {
   display: block;
-  width: clamp(45px, 8vw, 68px);
+  width: clamp(120px, 20vw, 220px);
   height: auto;
 }
 
-.navbar__menu {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  padding: 0.5rem;
-  margin: -0.5rem;
-  border: 0;
-  border-radius: 2px;
-  background: none;
+.navbar__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem clamp(0.875rem, 2vw, 1.75rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar__link {
   color: inherit;
-  cursor: pointer;
+  text-decoration: none;
+  font-size: clamp(0.875rem, 1.4vw, 1rem);
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+  transition: opacity 0.2s ease;
 }
 
-.navbar__menu:focus-visible {
+.navbar__link:hover {
+  opacity: 0.65;
+}
+
+.navbar__link:focus-visible {
   outline: 1px solid currentColor;
-  outline-offset: 2px;
+  outline-offset: 4px;
 }
 
-.navbar__menu-bar {
-  display: block;
-  width: 1.625rem;
-  height: 1.5px;
-  border-radius: 1px;
-  background-color: currentColor;
+/* Current page is marked with a Crushed Velvet underline. */
+.navbar__link[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-color: var(--crushed-velvet);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.4em;
 }
+
+/* On narrow screens the menu drops below the logo and centres itself. */
+@media (max-width: 40rem) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar__nav {
+    width: 100%;
+  }
+
+  .navbar__list {
+    justify-content: center;
+  }
+}
+
+/* --- Page content -------------------------------------------------------- */
 
 .page {
   flex: 1;
-  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  padding: clamp(1.5rem, 4vw, 3rem) var(--page-padding);
+  text-align: center;
 }
 
-.page__placeholder {
+.page__caption {
+  max-width: 52ch;
   margin: 0;
-  font-size: clamp(0.875rem, 1.6vw, 1.125rem);
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
   letter-spacing: 0.03em;
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+.page__caption--figure {
+  margin: clamp(1rem, 2vw, 1.5rem) auto 0;
+}
+
+/* Photos scale with the viewport and stay short enough to sit on one screen
+   alongside the header and bottom line. */
+.page__figure {
+  width: min(100%, 60rem);
+  margin: 0;
+}
+
+/* max-* with auto width/height lets the browser fit the photo inside both
+   limits while keeping its aspect ratio. Setting width:100% alongside
+   max-height instead would squash the image. */
+.page__photo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 70svh;
+  margin-inline: auto;
+  border-radius: 2px;
+}
+
+.page__video {
+  display: block;
+  width: min(100%, 60rem);
+  height: auto;
+  aspect-ratio: 1440 / 864;
+  max-height: 70svh;
+  object-fit: contain;
+  border-radius: 2px;
+  background-color: rgba(54, 54, 76, 0.06);
+}
+
+/* Studio Cristaline's own wordmark, in their own colour. */
+.page__wordmark {
+  display: block;
+  width: min(100%, 30rem);
+  height: auto;
+}
+
+.page__link {
+  display: inline-block;
+  border-radius: 2px;
+  color: inherit;
+}
+
+.page__link:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 4px;
+}
+
+.page__text-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--crushed-velvet);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+.page__text-link:hover {
+  opacity: 0.7;
 }
 
 @media (prefers-reduced-motion: no-preference) {
