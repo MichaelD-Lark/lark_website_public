@@ -394,10 +394,10 @@ body {
   background-color: rgba(54, 54, 76, 0.06);
 }
 
-/* Studio Cristaline's own wordmark, in their own colour. */
+/* Studio Cristaline's own wordmark, in their own colour. Doubled in size. */
 .page__wordmark {
   display: block;
-  width: min(100%, 30rem);
+  width: min(100%, 60rem);
   height: auto;
 }
 
