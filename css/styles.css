@@ -281,10 +281,10 @@ body {
 }
 
 /* Horizontal (secondary) logo — the manual's choice for website headers.
-   Held above its 100px digital minimum at every viewport. */
+   Held above its 100px digital minimum at every viewport. 25% larger than before. */
 .navbar__logo {
   display: block;
-  width: clamp(120px, 20vw, 220px);
+  width: clamp(150px, 25vw, 275px);
   height: auto;
 }
 
