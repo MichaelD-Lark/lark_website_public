@@ -482,7 +482,7 @@ body {
 }
 
 .page-section__text {
-  max-width: min(100%, 30rem);
+  max-width: min(100%, 48rem);
   margin-inline: auto;
   font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
   letter-spacing: 0.03em;
