@@ -397,7 +397,7 @@ body {
 /* Studio Cristaline's own wordmark, in their own colour. Doubled in size. */
 .page__wordmark {
   display: block;
-  width: min(100%, 60rem);
+  width: min(100%, 100rem);
   height: auto;
 }
 
