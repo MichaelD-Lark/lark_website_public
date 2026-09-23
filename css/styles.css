@@ -462,14 +462,7 @@ body {
   margin-bottom: 0;
 }
 
-/* Reverse column order for alternating layout */
-.alt-row--img-right {
-  direction: rtl;
-}
-
-.alt-row--img-right > * {
-  direction: ltr;
-}
+/* alt-row--img-right: HTML has [text, image] for display as text left, image right */
 
 @media (max-width: 48rem) {
   .alt-row {
@@ -489,6 +482,8 @@ body {
 }
 
 .page-section__text {
+  max-width: min(100%, 30rem);
+  margin-inline: auto;
   font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
   letter-spacing: 0.03em;
   line-height: 1.7;
