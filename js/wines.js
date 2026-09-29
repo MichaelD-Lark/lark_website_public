@@ -3,7 +3,8 @@ const winesData = {
     {
       name: "Sparkling Rosé",
       grapes: "70% Pineau d'aunis, 25% Gamay, 5% Poulsard",
-      description: "Co-fermented and left on the fine lees for eleven months. Re-fermented in bottle, without disgorgement. Redolent of light, bubbly blackcurrant juice.\nOh, and say “Hello” to our resident Polled Dorsets, aka our landscaping and fertilising team!",
+      description: `Co-fermented and left on the fine lees for eleven months. Re-fermented in bottle, without disgorgement. Redolent of light, bubbly blackcurrant juice.
+Oh, and say 'Hello' to our resident Polled Dorsets, aka our landscaping and fertilising team!`,
       abv: "10%",
       photo: "FN23.png"
     },
@@ -24,7 +25,10 @@ const winesData = {
     {
       name: "Josephine Red Blend",
       grapes: "40% Pinot noir, 30% Pinot meunier, 30% Auxerrois",
-      description: "After a gentle, seven day maceration, this cuvée was aged 11 months on the fine lees.\nTerrroir-driven and demonstrating that authentic still wines are possible which reflect the Essex countryside.\nOur label displays a pargetting pattern originally created by working with a stamp unique to the farmhouse, and is illustrative of the local plasterwork style of the same name.\nThis cuveé is dedicated to the late Davies family matriach, Jo.",
+      description: `After a gentle, seven day maceration, this cuvée was aged 11 months on the fine lees.
+Terrroir-driven and demonstrating that authentic still wines are possible which reflect the Essex countryside.
+Our label displays a pargetting pattern originally created by working with a stamp unique to the farmhouse, and is illustrative of the local plasterwork style of the same name.
+This cuveé is dedicated to the late Davies family matriach, Jo.`,
       abv: "11%",
       photo: "J23.png"
     }
@@ -33,7 +37,9 @@ const winesData = {
     {
       name: "Sparkling Rosé",
       grapes: "A field blend of Ortega, Bacchus, Pinot noir, Pinot gris, Chardonnay, Auxerrois, Pinot blanc, and Pineau d'aunis",
-      description: "The positive result of a very difficult vintage, in which tiny volumes required us to blend everything together to make a single cuvée.\nCo-fermented and left on the fine lees for eleven months. Re-fermented in bottle, without disgorgement. A light blush with added\ncomplexity and finesse due to the diverse blend of varieties.\nOh, and say “Hello” to our resident Polled Dorsets, aka our landscaping and fertilising team!",
+      description: `The positive result of a very difficult vintage, in which tiny volumes required us to blend everything together to make a single cuvée.
+Co-fermented and left on the fine lees for eleven months. Re-fermented in bottle, without disgorgement. A light blush with added complexity and finesse due to the diverse blend of varieties.
+Oh, and say 'Hello' to our resident Polled Dorsets, aka our landscaping and fertilising team!`,
       abv: "10.5%",
       photo: "FN24.png"
     }
@@ -42,7 +48,9 @@ const winesData = {
     {
       name: "Pinot Meunier Piquette",
       grapes: "100% Pinot meunier",
-      description: "Since Roman times, piquette has been quenching the thirst of labourers and vineyard workers.\nMade from rehydrated Pinot meunier skins, refermented in the bottle to produce a lively, low-ABV sparkling beverage.\nLight on the palate, bursting with hedgerow fruits and freshness.",
+      description: `Since Roman times, piquette has been quenching the thirst of labourers and vineyard workers.
+Made from rehydrated Pinot meunier skins, refermented in the bottle to produce a lively, low-ABV sparkling beverage.
+Light on the palate, bursting with hedgerow fruits and freshness.`,
       abv: "7%",
       photo: "PQ25.png"
     }
@@ -54,7 +62,6 @@ function initWines() {
   const winesList = document.getElementById('winesList');
   let currentVintage = '2023';
 
-  // Create vintage buttons
   Object.keys(winesData).sort().reverse().forEach(year => {
     const li = document.createElement('li');
     const button = document.createElement('button');
@@ -79,7 +86,6 @@ function initWines() {
     vintageMenu.appendChild(li);
   });
 
-  // Render default vintage
   renderWines(currentVintage);
 
   function renderWines(year) {
