@@ -601,7 +601,7 @@ body {
   width: 100%;
   height: auto;
   aspect-ratio: 2 / 3;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 2px;
 }
 
@@ -609,6 +609,7 @@ body {
   font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
   letter-spacing: 0.03em;
   line-height: 1.7;
+  text-align: left;
 }
 
 .wine-item__name {
@@ -623,13 +624,7 @@ body {
 }
 
 .wine-item__description {
-  margin: 0 0 1em 0;
-}
-
-.wine-item__abv {
   margin: 0;
-  font-size: 0.95em;
-  opacity: 0.9;
 }
 
 /* Alternate layout: image right, text left */

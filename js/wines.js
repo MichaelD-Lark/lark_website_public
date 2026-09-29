@@ -62,7 +62,7 @@ function initWines() {
   const winesList = document.getElementById('winesList');
   let currentVintage = '2023';
 
-  Object.keys(winesData).sort().reverse().forEach(year => {
+  Object.keys(winesData).sort().forEach(year => {
     const li = document.createElement('li');
     const button = document.createElement('button');
     button.className = 'wines__year';
@@ -117,8 +117,7 @@ function initWines() {
       textDiv.innerHTML = `
         <p class="wine-item__name">${wine.name}</p>
         <p class="wine-item__grapes">${wine.grapes}</p>
-        <p class="wine-item__description">${wine.description.replace(/\n/g, '<br>')}</p>
-        <p class="wine-item__abv">${wine.abv}</p>
+        <p class="wine-item__description">${wine.description.replace(/\n/g, '<br>')}<br><br>ABV: ${wine.abv}</p>
       `;
 
       wineDiv.appendChild(photoFig);
