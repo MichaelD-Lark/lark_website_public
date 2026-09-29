@@ -3,7 +3,7 @@ const winesData = {
     {
       name: "Sparkling Rosé",
       grapes: "70% Pineau d'aunis, 25% Gamay, 5% Poulsard",
-      description: "Co-fermented and left on the fine lees for eleven months. Re-fermented in bottle, without disgorgement. Redolent of light, bubbly blackcurrant juice.\nOh, and say "Hello" to our resident Polled Dorsets, aka our landscaping and fertilising team!",
+      description: "Co-fermented and left on the fine lees for eleven months. Re-fermented in bottle, without disgorgement. Redolent of light, bubbly blackcurrant juice.\nOh, and say “Hello” to our resident Polled Dorsets, aka our landscaping and fertilising team!",
       abv: "10%",
       photo: "FN23.png"
     },
@@ -33,7 +33,7 @@ const winesData = {
     {
       name: "Sparkling Rosé",
       grapes: "A field blend of Ortega, Bacchus, Pinot noir, Pinot gris, Chardonnay, Auxerrois, Pinot blanc, and Pineau d'aunis",
-      description: "The positive result of a very difficult vintage, in which tiny volumes required us to blend everything together to make a single cuvée.\nCo-fermented and left on the fine lees for eleven months. Re-fermented in bottle, without disgorgement. A light blush with added\ncomplexity and finesse due to the diverse blend of varieties.\nOh, and say "Hello" to our resident Polled Dorsets, aka our landscaping and fertilising team!",
+      description: "The positive result of a very difficult vintage, in which tiny volumes required us to blend everything together to make a single cuvée.\nCo-fermented and left on the fine lees for eleven months. Re-fermented in bottle, without disgorgement. A light blush with added\ncomplexity and finesse due to the diverse blend of varieties.\nOh, and say “Hello” to our resident Polled Dorsets, aka our landscaping and fertilising team!",
       abv: "10.5%",
       photo: "FN24.png"
     }
@@ -52,7 +52,7 @@ const winesData = {
 function initWines() {
   const vintageMenu = document.getElementById('vintageMenu');
   const winesList = document.getElementById('winesList');
-  let currentVintage = 2023;
+  let currentVintage = '2023';
 
   // Create vintage buttons
   Object.keys(winesData).sort().reverse().forEach(year => {
@@ -62,7 +62,7 @@ function initWines() {
     button.textContent = year;
     button.setAttribute('data-year', year);
 
-    if (year == currentVintage) {
+    if (year === currentVintage) {
       button.classList.add('wines__year--active');
     }
 
