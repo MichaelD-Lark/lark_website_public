@@ -527,6 +527,126 @@ body {
   }
 }
 
+/* --- Wines page: vintage selector and wine listings ----------------------- */
+
+.wines__selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.wines__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 2.4vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.wines__menu {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.wines__year {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: clamp(0.875rem, 1.6vw, 1rem);
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.wines__year:hover {
+  opacity: 0.65;
+}
+
+.wines__year--active {
+  text-decoration: underline;
+  text-decoration-color: var(--crushed-velvet);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.4em;
+}
+
+.wines__list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+  width: 100%;
+}
+
+.wine-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.wine-item__figure {
+  margin: 0;
+}
+
+.wine-item__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.wine-item__text {
+  font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+}
+
+.wine-item__name {
+  margin: 0 0 0.5em 0;
+  font-weight: 500;
+}
+
+.wine-item__grapes {
+  margin: 0 0 1em 0;
+  font-size: 0.95em;
+  opacity: 0.9;
+}
+
+.wine-item__description {
+  margin: 0 0 1em 0;
+}
+
+.wine-item__abv {
+  margin: 0;
+  font-size: 0.95em;
+  opacity: 0.9;
+}
+
+/* Alternate layout: image right, text left */
+.wine-item--img-right {
+  direction: rtl;
+}
+
+.wine-item--img-right > * {
+  direction: ltr;
+}
+
+@media (max-width: 48rem) {
+  .wine-item {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .landing__logo,
   .landing__message,

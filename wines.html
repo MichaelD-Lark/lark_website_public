@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=ranade@400,500&amp;display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/site.js"></script>
+  <script src="js/wines.js"></script>
 </head>
 <body>
   <header class="navbar">
@@ -35,16 +36,22 @@
     </nav>
   </header>
 
-  <main class="page">
-    <figure class="page__figure">
-      <img
-        class="page__photo"
-        src="photos/Wines/Lineup.JPG"
-        alt="A line-up of Lark Vineyard bottles on a wooden table, the nearest labelled Josephine 2023, estate bottled."
-        width="5793"
-        height="4006">
-      <figcaption class="page__caption page__caption--figure">Description of our ever-evolving portfolio is coming soon...</figcaption>
-    </figure>
+  <main class="page page--wines">
+    <!-- Section 1: About our winemaking -->
+    <section class="page-section">
+      <div class="page-section__text">
+        <p>All of our wines are the result of spontaneous fermentations. They are not filtered or fined - clarification is achieved through patient settling of the wine and occasional racking. Nothing except grapes is added to our wines, apart from a little sugar to initiate secondary fermentation in the bottle for our sparklings. No added sulphites.</p>
+      </div>
+    </section>
+
+    <!-- Section 2: Vintage selector -->
+    <section class="wines__selector">
+      <h2 class="wines__title">Select vintage</h2>
+      <ul class="wines__menu" id="vintageMenu"></ul>
+    </section>
+
+    <!-- Section 3: Wine listings (populated by JS) -->
+    <section class="wines__list" id="winesList"></section>
   </main>
 
   <footer class="footer">
