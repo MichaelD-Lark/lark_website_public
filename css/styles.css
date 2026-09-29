@@ -589,43 +589,47 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(1.5rem, 4vw, 3rem);
-  align-items: start;
+  align-items: center;
 }
 
 .wine-item__figure {
   margin: 0;
+  padding: 0;
 }
 
 .wine-item__photo {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 2 / 3;
+  max-height: 60vh;
   object-fit: scale-down;
   border-radius: 2px;
 }
 
 .wine-item__text {
-  font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
+  margin: 0;
+  padding: 0;
+  font-size: clamp(13px, calc(1.8vw - 2px), 16px);
   letter-spacing: 0.03em;
   line-height: 1.7;
   text-align: left;
-  align-self: start;
 }
 
 .wine-item__name {
-  margin: 0 0 0.25em 0;
+  margin: 0;
+  padding: 0;
   font-weight: 500;
 }
 
 .wine-item__grapes {
-  margin: 0 0 0.75em 0;
+  margin: 0.5em 0 0.5em 0;
+  padding: 0;
   font-size: 0.95em;
   opacity: 0.9;
 }
 
 .wine-item__description {
-  margin: 0;
+  margin: 0.5em 0 0 0;
   padding: 0;
 }
 
