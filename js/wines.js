@@ -92,14 +92,9 @@ function initWines() {
     winesList.innerHTML = '';
     const wines = winesData[year] || [];
 
-    wines.forEach((wine, index) => {
+    wines.forEach((wine) => {
       const wineDiv = document.createElement('div');
       wineDiv.className = 'wine-item';
-      if (index % 2 === 0) {
-        wineDiv.classList.add('wine-item--img-left');
-      } else {
-        wineDiv.classList.add('wine-item--img-right');
-      }
 
       const photoFig = document.createElement('figure');
       photoFig.className = 'wine-item__figure';

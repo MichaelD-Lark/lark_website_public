@@ -627,15 +627,6 @@ body {
   margin: 0;
 }
 
-/* Alternate layout: image right, text left */
-.wine-item--img-right {
-  direction: rtl;
-}
-
-.wine-item--img-right > * {
-  direction: ltr;
-}
-
 @media (max-width: 48rem) {
   .wine-item {
     grid-template-columns: 1fr;
