@@ -378,7 +378,7 @@ body {
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 70svh;
+  max-height: 540px;
   margin-inline: auto;
   border-radius: 2px;
 }
@@ -440,12 +440,15 @@ body {
 
 .alt-row__figure {
   margin: 0;
+  max-height: 360px;
 }
 
 .alt-row__photo {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-height: 360px;
+  object-fit: contain;
   border-radius: 2px;
 }
 
@@ -516,6 +519,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
+  max-height: 360px;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 2px;
@@ -601,7 +605,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 60vh;
+  max-height: 300px;
   object-fit: scale-down;
   border-radius: 2px;
 }
@@ -629,7 +633,7 @@ body {
 }
 
 .wine-item__description {
-  margin: 0.5em 0 0 0;
+  margin: 0.5em 0;
   padding: 0;
 }
 
