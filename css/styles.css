@@ -440,7 +440,7 @@ body {
 }
 
 .home__text {
-  max-width: 28rem;
+  max-width: 30rem;
   justify-self: end;
   font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
   letter-spacing: 0.03em;
@@ -456,7 +456,7 @@ body {
 .home__figure {
   margin: 0;
   padding: 0;
-  max-width: 28rem;
+  max-width: 30rem;
   justify-self: start;
   width: 100%;
 }
