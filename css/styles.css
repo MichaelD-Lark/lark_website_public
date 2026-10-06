@@ -425,6 +425,111 @@ body {
   opacity: 0.7;
 }
 
+/* --- Home page: welcome section with text and photo side-by-side ----------- */
+
+.page--home {
+  align-items: stretch;
+}
+
+.home__welcome {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+}
+
+.home__text {
+  max-width: 28rem;
+  font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+  text-align: center;
+  width: 100%;
+}
+
+.home__text p {
+  margin: 0;
+}
+
+.home__figure {
+  margin: 0;
+  padding: 0;
+  max-width: 28rem;
+  width: 100%;
+}
+
+.home__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  border-radius: 2px;
+}
+
+.home__news {
+  max-width: 60ch;
+  width: 100%;
+  margin-top: clamp(2rem, 5vw, 4rem);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.home__news-title {
+  margin: 0 0 1rem 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 2.4vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.home__news-text {
+  max-width: 60ch;
+  margin: 0;
+  font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+}
+
+.home__gallery {
+  width: 100%;
+  margin-top: clamp(2rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.home__gallery-row {
+  display: flex;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  justify-content: center;
+}
+
+.home__gallery-figure {
+  margin: 0;
+  padding: 0;
+  flex: 0 1 auto;
+  height: clamp(150px, 25vw, 300px);
+}
+
+.home__gallery-photo {
+  display: block;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+@media (max-width: 48rem) {
+  .home__welcome {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* --- About page: alternating rows layout ------------------------------------- */
 
 .page--alt-rows {
