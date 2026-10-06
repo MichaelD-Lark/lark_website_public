@@ -436,12 +436,12 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: clamp(1.5rem, 4vw, 3rem);
   align-items: center;
-  justify-items: center;
   width: 100%;
 }
 
 .home__text {
   max-width: 28rem;
+  justify-self: end;
   font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
   letter-spacing: 0.03em;
   line-height: 1.7;
@@ -457,6 +457,7 @@ body {
   margin: 0;
   padding: 0;
   max-width: 28rem;
+  justify-self: start;
   width: 100%;
 }
 
@@ -464,7 +465,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 360px;
+  max-height: 480px;
   border-radius: 2px;
 }
 
